@@ -19,7 +19,7 @@
 			<email>antonytrupe@gmail.com</email>
 		</developer>
 	</developers>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<inceptionYear>2011</inceptionYear>
 	<licenses>
 		<license>
