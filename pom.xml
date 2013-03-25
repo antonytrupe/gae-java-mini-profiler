@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ca.jimr</groupId>
 	<artifactId>gae-mini-profiler</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<name>Google App Engine Profiler for Java</name>
 	<description>A mini profiler for the Google App Engine Java runtime (inspired by the Python gae_mini_profiler at https://github.com/kamens/gae_mini_profiler and the MVC Mini Profiler at http://code.google.com/p/mvc-mini-profiler/)</description>
 	<url>https://github.com/jriecken/gae-java-mini-profiler</url>
