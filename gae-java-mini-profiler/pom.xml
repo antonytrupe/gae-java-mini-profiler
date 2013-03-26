@@ -1,48 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ca.jimr</groupId>
-	<artifactId>gae-mini-profiler-parent</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
-	<name>Google App Engine Profiler for Java - Parent</name>
+	<artifactId>gae-mini-profiler</artifactId>
+	<name>Google App Engine Profiler for Java</name>
 	<description>A mini profiler for the Google App Engine Java runtime (inspired by the Python gae_mini_profiler at https://github.com/kamens/gae_mini_profiler and the MVC Mini Profiler at http://code.google.com/p/mvc-mini-profiler/)</description>
-	<url>https://github.com/jriecken/gae-java-mini-profiler</url>
 
-	<modules>
-		<module>gae-java-mini-profiler</module>
-		<module>gae-java-mini-profiler-webapp</module>
-	</modules>
-
-	<developers>
-		<developer>
-			<id>jriecken</id>
-			<name>Jim Riecken</name>
-			<email>jriecken@gmail.com</email>
-		</developer>
-		<developer>
-			<id>antonytrupe</id>
-			<name>Antony Trupe</name>
-			<email>antonytrupe@gmail.com</email>
-		</developer>
-	</developers>
-	<packaging>pom</packaging>
-	<inceptionYear>2011</inceptionYear>
-	<licenses>
-		<license>
-			<name>MIT</name>
-			<url>http://en.wikipedia.org/wiki/MIT_License</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-	<scm>
-		<url>https://github.com/jriecken/gae-java-mini-profiler</url>
-		<connection>https://github.com/jriecken/gae-java-mini-profiler.git</connection>
-	</scm>
+	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
+		<groupId>ca.jimr</groupId>
+		<artifactId>gae-mini-profiler-parent</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
