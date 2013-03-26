@@ -6,7 +6,10 @@ Google App Engine Mini Profiler for Java
  - [Getting Started](#getting-started)
    - [Dependencies](#dependencies)
    - [Installation](#installation)
+     - [Maven](#maven_installation)
    - [Configuration](#configuration)
+     - [Dynamic(jsp) Configuration](#jsp_configuration)
+     - [Static Configuration](#static_configuration)
  - [Instrumenting your code](#instrumenting-code)
 
 About
@@ -79,6 +82,16 @@ Clone the source from here and build it using [maven](http://maven.apache.org/).
 
 Then copy the `gae-mini-profiler-1.0.0.jar` file (and the two Jackson jars) to your `WEB-INF/lib` folder.
 
+<a name="maven_installation"></a>
+#### Maven Installation
+    <dependency>
+      <groupId>ca.jimr</groupId>
+      <artifactId>gae-mini-profiler</artifactId>
+      <version>1.1.0</version>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+
 <a name="configuration"></a>
 ### Configuration
 
@@ -134,6 +147,9 @@ _Filter Parameters_
  </tbody>
 </table>
 
+<a name="jsp_configuration"></a>
+#### Dynamic(.jsp) Page Configuration
+
 At the bottom of the `<head>` in your page (usually in whatever global template you are using), you must output
 the contents of the `mini_profile_includes` request attribute.  This attribute will be `null` if the profiler
 did not run for this request.  E.g.
@@ -141,10 +157,34 @@ did not run for this request.  E.g.
     <head>
       <!-- Other Stuff would go here -->
       ${mini_profile_includes}
-    </head> 
-    
+    </head>
+
 If you are already including jQuery and/or jQuery Templates on your page, this include needs to happen _after_ them.  If jQuery or jQuery Templates are not already included on the page, they will be.
-    
+
+<a name="static_configuration"></a>
+#### Static Page Configuration
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script src="/ca/jimr/gae/profiler/resources/jquery.tmpl.min.js"></script>
+      <script src="/ca/jimr/gae/profiler/resources/mini_profiler.js"></script>
+      <link rel="stylesheet" href="/ca/jimr/gae/profiler/resources/mini_profiler.css" type="text/css" media="all">
+      <script>
+      $(function() {
+        MiniProfiler.init({
+    		    //requestId: '-1',
+          baseURL: '/gae_mini_profile/'
+        });
+        });
+      </script>
+      </head>
+    <body>
+      <iframe id="mini-profiler-templates" src="/ca/jimr/gae/profiler/resources/mini_profiler.html" style="display:none"></iframe>
+      <div id="mp" style="display: none;"></div>
+      <div id="mp-req" style="display: none;"></div>
+      ....
+    </body>
+
+   
 ### Start up your app!
     
 And that's it.  When you run your application, depending on what restrictions you have set, you will see profiling stats showing
