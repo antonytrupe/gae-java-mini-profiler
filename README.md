@@ -91,6 +91,14 @@ Then copy the `gae-mini-profiler-1.0.0.jar` file (and the two Jackson jars) to y
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>ca.jimr</groupId>
+      <artifactId>gae-mini-profiler-webapp</artifactId>
+      <version>1.1.0</version>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
 
 <a name="configuration"></a>
 ### Configuration
