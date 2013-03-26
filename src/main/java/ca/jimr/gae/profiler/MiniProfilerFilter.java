@@ -270,7 +270,7 @@ public class MiniProfilerFilter implements Filter {
 	 * @return Whether the URL should be profiled.
 	 */
 	public boolean shouldProfile(String url) {
-		// Don't profile requests to to results servlet
+		// Don't profile requests to results servlet
 		if (url.startsWith(servletURL)) {
 			return false;
 		}

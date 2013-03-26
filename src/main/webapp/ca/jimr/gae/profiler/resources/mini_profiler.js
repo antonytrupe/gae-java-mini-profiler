@@ -11,12 +11,14 @@ var MiniProfiler = (function() {
 		// none;"></div><div id="mp-req" style="display: none;"></div>');
 
 		// Initialize the HTML templates
-		$.template('requestTemplate', $('#mp-request-tmpl').html());
-		$.template('resultTemplate', $('#mp-result-tmpl').html());
-		$.template('resultTreeTemplate', $('#mp-result-tree-tmpl').html());
+		$.template('requestTemplate', $('#mp-request-tmpl', $("#mini-profiler-templates").contents()).html());
+		$.template('resultTemplate', $('#mp-result-tmpl', $("#mini-profiler-templates").contents()).html());
+		$.template('resultTreeTemplate', $('#mp-result-tree-tmpl', $("#mini-profiler-templates").contents()).html());
 
 		var requestIds = getRedirectRequests(window.location.href);
-		requestIds.push(options.requestId);
+		if (typeof options.requestId !== "undefined" && options.requestId >= 0) {
+			requestIds.push(options.requestId);
+		}
 		getProfileInformation(requestIds, 'normal');
 
 		// Dynamically add profile information for any Ajax requets that happen
