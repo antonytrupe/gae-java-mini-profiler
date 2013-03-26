@@ -170,11 +170,13 @@ If you are already including jQuery and/or jQuery Templates on your page, this i
       <link rel="stylesheet" href="/ca/jimr/gae/profiler/resources/mini_profiler.css" type="text/css" media="all">
       <script>
       $(function() {
-        MiniProfiler.init({
-    		    //requestId: '-1',
-          baseURL: '/gae_mini_profile/'
+        $("mini-profiler-templates").ready(function (){
+          MiniProfiler.init({
+    		      //requestId: '-1',
+            baseURL: '/gae_mini_profile/'
+          });
         });
-        });
+      });
       </script>
       </head>
     <body>
