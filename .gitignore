@@ -3,3 +3,5 @@ target/*
 /.classpath
 
 /.settings/*.prefs
+/gae-java-mini-profiler-webapp/target
+/gae-java-mini-profiler/target
